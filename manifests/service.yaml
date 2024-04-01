@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-test-cicd
+  namespace: namespace-workflow-1711943425630
+spec:
+  type: LoadBalancer
+  selector:
+    app: first-test-cicd
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
