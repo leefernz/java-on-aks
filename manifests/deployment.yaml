@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-test-cicd
+  labels:
+    app: first-test-cicd
+  namespace: namespace-workflow-1711943425630
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-test-cicd
+  template:
+    metadata:
+      labels:
+        app: first-test-cicd
+    spec:
+      containers:
+        - name: first-test-cicd
+          image: azureforbeginner.azurecr.io/image-cicd-1711943425630:latest
+          ports:
+            - containerPort: 8080
